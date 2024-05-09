@@ -1,0 +1,114 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  4 footer
+/*----------------------------------------*/
+
+// Footer style 
+.footer__area-common-4 {
+    padding-top: 80px;
+
+    @media #{$md, $sm, $xs} {
+        padding-top: 60px;
+    }
+}
+
+.footer__widget-4 {
+    
+    &:nth-child(1) {
+        max-width: 381px;
+        
+        @media #{$lg} {
+            max-width: 250px;
+        }
+        
+        @media #{$xs, $sm, $md} {
+            max-width:100%;
+        }
+    }
+    &:nth-child(2) {
+        max-width: 221px;
+    }
+    &:nth-child(3)  {
+        max-width: 191px;
+        
+        @media #{$xs, $sm, $md} {
+            max-width:100%;
+        }
+    }
+    &:nth-child(4) {
+        max-width: 300px;
+        @media #{$xs, $sm} {
+            max-width:100%;
+            min-width:100%;
+        }
+        .footer__link {
+            ul {
+                max-width:166px;
+            }
+        }
+    }
+        
+    .footer {
+        
+        &__widget-title h4 {
+            border-bottom: 0;
+            padding-bottom:0;
+            margin-bottom:40px;
+        }
+        
+        &__link {
+
+        	ul {
+        		display: grid;
+        		grid-gap: 12px;
+        		grid-template-columns: 1fr;
+
+        		li {
+        			list-style: none;
+
+        			a {
+        				font-size: 16px;
+        				position: relative;
+        				color: var(--rs-common-white);
+        				font-weight: var(--rs-fw-normal);
+
+        				&::before {
+        					width: 0px;
+        					height: 1px;
+        					content: "";
+        					left: -15px;
+        					position: absolute;
+        					top: calc(50% + .5px);
+        					@extend %rs-transition-3;
+        					@include transform(translateY(-50%));
+        					background-color: var(--rs-common-yellow);
+        				}
+        				&:hover {
+        					color: var(--rs-common-yellow);
+
+        					&::before {
+        						width: 12px;
+        					}
+        				}
+        			}
+        		}
+        	}
+        }
+
+        &__social {
+            
+            a {
+                &:hover {
+                    &::before {
+                        transform: translate(0, 0);
+                        background-color: var(--rs-common-yellow);
+                    }
+                    color: var(--rs-common-black);
+                    @include transform(translateY(-3px))
+                }
+            }
+        }
+        
+    }
+}

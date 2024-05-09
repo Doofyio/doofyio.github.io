@@ -1,0 +1,141 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.3 header-3
+/*----------------------------------------*/
+.header-5 {
+	width: 100%;
+	z-index: 3;
+	top: 40px !important;
+	position: absolute;
+
+	@media #{$xs} {
+		top: 20px !important;
+	}
+	
+	.mega {
+
+		&__menu-wrapper {
+			padding: 21px 30px;
+			@include border-radius(20px);
+			background: var(--rs-common-white);
+
+			@media #{$md, $sm, $xs} {
+				padding: 0px 15px;
+			}
+		}
+	}
+    
+    &.rs-sticky  {
+		top: 0 !important;
+
+    	.mega {
+
+    		&__menu-wrapper {
+    			background: transparent;
+    		}
+    	}
+		
+    }
+    .main-menu {
+
+    	& ul {
+    		& li {
+				
+				@media #{$lg} {
+					margin-inline-end: 20px;
+				}
+    			&.active {
+
+    			    > a {
+    			        color:  var(--rs-common-blue) !important;
+    			    }
+    			}
+
+				& > a {
+					padding: 0;
+				}
+
+    			&:hover {
+    				&>a {
+    				    color:  var(--rs-common-blue) !important;
+    				    &::after {
+    				        color:  var(--rs-common-blue) !important;
+    				        @include transform(rotate(180deg));
+    				    }
+    				}
+    			}
+    		}
+    	}
+    }
+
+    & .submenu {
+    	border: 1px solid var(--rs-common-blue) !important;
+
+    	& li {
+    		& a{
+
+    		    &:hover {
+    		        color: var(--rs-common-blue) !important;
+
+    		        &::before {
+    		            background: var(--rs-common-blue) !important;
+    		        }
+    		    }
+    		}
+    		&:hover{
+    		    & > a{
+    		        color: var(--rs-common-blue);
+    		        &::before{
+    		            background-color: var(--rs-common-blue);
+    		        }
+    		    }
+    		}
+    	}
+    }
+
+    & .mega-menu{
+        border: 1px solid var(--rs-common-blue) !important;
+    }
+    .home__menu-thumb {
+    	border: 1px solid var(--rs-common-blue) !important;
+    }
+
+    .header__btn {
+
+    	.icon {
+
+    		background-color: var(--rs-common-blue); 
+    		
+    		i {
+    			color: var(--rs-common-white);
+    		}
+    	}
+    	
+    	.text {
+    		span {
+				display: block;
+				margin-bottom: 8px;
+    			color: var(--rs-gray-600);
+    		}
+    		h5 {
+    			&:hover {
+    				color:  var(--rs-common-blue) !important;
+    			}
+    		}
+    	}
+    }
+
+	.header__hamburger  {
+
+		.sidebar__toggle {
+
+			.bar-icon {
+
+				span {
+					background: var(--rs-common-blue);
+				}
+			}
+		}
+	}
+}

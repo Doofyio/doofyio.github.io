@@ -1,0 +1,126 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  5 footer
+/*----------------------------------------*/
+
+// Footer style 
+
+.footer__area-common-5 {
+    padding-top: 88px;
+
+    @media #{$md, $sm, $xs} {
+        padding-top: 60px;
+    }
+
+    .footer__social {
+		a {
+			&:hover {
+				color: var(--rs-common-blue);
+			}
+		}
+	}
+    .footer__main {
+        border-bottom: 1px solid var(--rs-border-secondary);
+    }
+
+    .footer__bottom-wrapper {
+        border-top: none;
+    }
+}
+.footer__widget-5 {
+    
+    &:nth-child(1) {
+        max-width: 381px;
+        
+        @media #{$lg} {
+            max-width: 250px;
+        }
+        
+        @media #{$xs, $sm, $md} {
+            max-width:100%;
+        }
+    }
+    &:nth-child(2) {
+        max-width: 221px;
+    }
+    &:nth-child(3)  {
+        max-width: 191px;
+        
+        @media #{$xs, $sm, $md} {
+            max-width:100%;
+        }
+    }
+    &:nth-child(4) {
+        max-width: 300px;
+        @media #{$xs, $sm} {
+            max-width:100%;
+            min-width:100%;
+        }
+        .footer__link {
+
+            ul {
+                max-width:166px;
+                gap: 20px;
+            }
+        }
+    }
+        
+    .footer {
+        
+        &__widget-title h4 {
+            border-bottom: 0;
+            padding-bottom:0;
+            margin-bottom:40px;
+        }
+
+        &__social {
+            a {
+               
+                &:hover {
+                    color: var(--rs-common-blue);
+                    @include transform(translateY(-3px))
+                }
+            }
+        }
+        
+        &__link {
+
+        	ul {
+        		display: grid;
+        		grid-gap: 20px;
+        		grid-template-columns: 1fr;
+
+        		li {
+        			list-style: none;
+
+        			a {
+        				font-size: 16px;
+        				position: relative;
+        				color: var(--rs-common-white);
+        				font-weight: var(--rs-fw-normal);
+
+        				&::before {
+        					width: 0px;
+        					height: 1px;
+        					content: "";
+        					left: -15px;
+        					position: absolute;
+        					top: calc(50% + .5px);
+        					@extend %rs-transition-3;
+        					@include transform(translateY(-50%));
+        					background-color: var(--rs-common-blue);
+        				}
+        				&:hover {
+        					color: var(--rs-common-blue);
+
+        					&::before {
+        						width: 12px;
+        					}
+        				}
+        			}
+        		}
+        	}
+        }
+    }
+}

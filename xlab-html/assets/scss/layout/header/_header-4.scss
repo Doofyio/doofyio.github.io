@@ -1,0 +1,200 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.3 header-3
+/*----------------------------------------*/
+.header-4 {
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    position: fixed;
+
+    &.rs-sticky  {
+
+        .main-menu {
+
+         & ul {
+             & li {
+                 &.active {
+
+                     > a {
+                         color:  var(--rs-common-yellow) !important;
+                         opacity: 100%;
+                     }
+                 }
+
+                 &:hover {
+                     &>a {
+                         color:  var(--rs-common-yellow);
+                         &::after {
+                             color:  var(--rs-common-yellow);
+                             @include transform(rotate(180deg));
+                         }
+                     }
+                 }
+             }
+         }
+        }
+
+        .header__right {
+
+            .header__action {
+    
+                .rs-btn {
+                    padding: 18px 30px 17px;
+    
+                    span {
+                        margin-left: 20px;
+                        display: inline-flex;
+                    }
+                }
+            }
+    
+            .header__hamburger  {
+    
+                .sidebar__toggle{
+    
+                    .bar-icon {
+    
+                        span {
+                            background: var(--rs-common-yellow);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .main-menu {
+
+        & ul {
+            & li {
+                &.active {
+
+                    > a {
+                        color:  var(--rs-common-black-2) !important;
+                        opacity: 100%;
+                    }
+                }
+
+                &:hover {
+                    &>a {
+                        color:  var(--rs-common-black-2);
+                        &::after {
+                            color:  var(--rs-common-black-2);
+                            @include transform(rotate(180deg));
+                        }
+                    }
+                }
+            }
+        }
+       }
+
+    .header__middle {
+        margin-left: 216px;
+
+        @media #{$xxl,$xl, $lg, $md, $sm, $xs} {
+            margin-left: 0;
+        }
+    }
+
+    .header__right {
+
+        .header__action {
+
+            .rs-btn {
+                padding: 18px 30px 17px;
+
+                span {
+                    margin-left: 20px;
+                    display: inline-flex;
+                }
+            }
+        }
+
+        .header__hamburger  {
+
+            .sidebar__toggle {
+
+                .bar-icon {
+
+                    span {
+                        background: var(--rs-gray-900);
+                    }
+                }
+            }
+        }
+    }
+    
+   .main-menu {
+
+    & ul {
+        & li {
+            margin-inline-end: 34px;
+
+            @media #{$xxl, $lg, $md} {
+                margin-inline-end: 25px;
+            }
+
+            > {
+                & a {
+                    opacity: 0.6;
+                }
+            }
+
+           > &.active {
+
+                > a {
+                    opacity: 100%;
+                    color: var(--rs-gray-900) !important;
+                }
+            }
+
+            &:hover {
+
+                &>a {
+                    opacity: 100%;
+                    color:  var(--rs-gray-900);
+
+                    &::after {
+                        color:  var(--rs-gray-900);
+                        @include transform(rotate(180deg));
+                    }
+                }
+            }
+        }
+    }
+   }
+
+   & .submenu {
+    border: 1px solid var(--rs-common-yellow) !important;
+
+    & li {
+        & a{
+
+            &:hover {
+                color: var(--rs-common-yellow) !important;
+
+                &::before {
+                    background: var(--rs-common-yellow) !important;
+                }
+            }
+        }
+        &:hover{
+            & > a{
+                color: var(--rs-common-yellow);
+                &::before{
+                    background-color: var(--rs-common-yellow);
+                }
+            }
+        }
+    }
+   }
+
+   & .mega-menu{
+       border: 1px solid var(--rs-common-yellow) !important;
+   }
+   .home__menu-thumb {
+    border: 1px solid var(--rs-common-yellow) !important;
+   }
+}

@@ -1,0 +1,203 @@
+@use "../../utils" as *;
+
+/*----------------------------------------*/
+/*  8.2 faq
+/*----------------------------------------*/
+.rs__faq {
+    .accordion-button {
+        font-size: var(--rs-fs-h5);
+        line-height: var(--rs-lh-h5);
+        color: var(--rs-heading-primary);
+        font-weight: var(--rs-fw-medium);
+        background: transparent;
+        padding: 25px 0;
+        padding-right: 50px;
+        display: inline-block;
+        &:focus {
+            box-shadow: none;
+        }
+        &:not(.collapsed) {
+            @include light {
+                background: var(--rs-bg-10);
+            }
+            box-shadow: none;
+            &::after {
+                content: "\f068";
+            }
+        }
+        &::after {
+            position: absolute;
+            right: 30px;
+            content: "\2b";
+            background-image: none;
+            font-family: var(--rs-ff-fontawesome);
+            font-size: 16px;
+            top: calc(50% - 6px);
+            font-weight: 400;
+            text-align: center;
+            color: var(--rs-theme-primary);
+            @extend %translateY1_2;
+            @media #{$sm,$md} {
+                right: 25px;
+            }
+            @media #{$xs, $lg} {
+                left: 20px;
+            }
+        }
+    }
+    .accordion-body {
+        padding-top: 0;
+        padding-bottom: 50px;
+        padding-right: 50px;
+        > P {
+            margin-bottom: 0;
+        }
+    }
+    .accordion-item {
+        border: 0;
+        background: transparent;
+        &:first-child {
+            border-top: 1px solid var(--rs-gray-200) !important;
+        }
+        &:nth-child(odd) {
+            border-bottom: 1px solid var(--rs-gray-200) !important;
+        }
+        &:nth-child(even) {
+            border-bottom: 1px solid var(--rs-gray-200) !important;
+        }
+    }
+    .accordion {
+        columns: 2;
+        column-gap: 30px;
+        @media #{$xs, $sm, $md} {
+            columns: 1;
+        }
+    }
+}
+
+/*faq-section-start*/
+
+.question {
+
+    &__content {
+        max-width: 402px;
+
+        @media #{$lg, $md, $sm, $xs} {
+            max-width: 100%;
+        }
+        @media #{$md, $sm, $xs} {
+            max-width: 100%;
+            margin-bottom: 40px;
+        }
+
+        p {
+            margin-bottom: 0;
+            line-height: 30px;
+            color: var(--rs-gray-600);
+            font-family: var(--rs-ff-rubik);
+        }
+    }
+}
+
+.faq {
+
+    .faq-button {
+        width: 100%;
+        display: flex;
+        padding: 17px 20px;
+        position: relative;
+        padding-right: 50px;
+        border-radius: 75px;
+        font-size: var(--rs-fs-h4);
+        line-height: var(--rs-lh-h4);
+        font-weight: var(--rs-fw-medium);
+        color: var(--rs-common-black-2);
+        align-items: center;
+        border: 1px solid rgba(0, 29, 8, 0.10);
+
+        @media #{$xs} {
+            padding: 10px 20px;
+            padding-right: 35px;
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+        &::after {
+            right: 30px;
+            content: "\f105";
+            font-size: 16px;
+            font-weight: 400;
+            text-align: center;
+            position: absolute;
+            transition: 0.3s;
+            color: var(--rs-common-black-2);
+            font-family: "Font Awesome 5 Pro";
+
+            @media #{$sm,$md} {
+                right: 25px;
+            }
+            @media #{$xs, $lg} {
+                right: 20px;
+            }
+        }
+    }
+    
+    .faq-body {
+        padding-top: 0;
+        padding-right: 50px;
+
+        @media #{$md, $sm, $xs} {
+            padding-right: 0px;
+        }
+
+        > P {
+            margin-bottom: 0;
+            margin-top: 13px;
+            color: var(--rs-gray-800);
+            margin-left: 40px;
+
+            @media #{$md, $sm, $xs} {
+                margin-left: 10px;
+            }
+        }
+    }
+    .faq-item {
+
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    .faq-header {
+        border-radius: 5px;
+        color: var(--rs-common-white);
+
+        .faq-button {
+            text-align: left;
+
+            @media #{$xs} {
+                font-size: 17px;
+                line-height: 22px;
+            }
+        }
+
+        &[aria-expanded="true"]  {
+        border-color: transparent;
+        background-color: white;
+
+            .faq-button {
+                color: white;
+            }
+        
+            .faq-button  {
+                background: var(--rs-common-blue);
+
+                &::after {
+                    rotate: -90deg;
+                    color: var(--rs-common-white);
+                }
+            }
+        }
+    }
+}
